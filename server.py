@@ -17,8 +17,8 @@ def index():
   crypto_ticker = crypto_name.upper()
 
   # FETCH BTC/USD/EUR PRICES
-  # r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
-#
+   r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
+
   return jsonify(
     status=200,
     replies=[{
