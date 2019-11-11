@@ -13,7 +13,7 @@ def index():
   data = json.loads(request.get_data().decode('utf-8'))
 
   # FETCH THE CRYPTO NAME
-  crypto_name = data['source']
+  crypto_name = data['raw']
   crypto_ticker = crypto_name.upper()
 
   # FETCH BTC/USD/EUR PRICES
