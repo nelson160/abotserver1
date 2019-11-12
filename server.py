@@ -31,20 +31,6 @@ def index():
   # FETCH THE CRYPTO NAME
   chat_path = data['nlp']['source']
   
-  loaded_model = tf.keras.models.load_model(model_path)
-
-    with open(tokenizer_path, 'rb') as handle:
-        loaded_tokenizer = pickle.load(handle)
-   
-    sentences_token = loaded_tokenizer.texts_to_sequences([chat_path])
-    sentences_pad = pad_sequences(sentences_token, padding='post', maxlen=maxlen)
-    sentences_pad
-    predi = loaded_model.predict(sentences_pad)
-    labels = ['negativ', 'neutral', 'positiv']
-    #print(predi, labels[np.argmax(predi)])
-    sentiment = labels[np.argmax(predi)]
-
-
 
   # FETCH BTC/USD/EUR PRICES
   #r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
