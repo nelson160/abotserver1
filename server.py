@@ -17,7 +17,7 @@ print(port)
 
 @app.route('/', methods=['POST'])
 #chat_path = r"data/chat.json"
-model_path = 'paper_cnn_gru_drop02.h5'
+model_path = "paper_cnn_gru_drop02.h5"
 tokenizer_path =  "tokenizer.pickle"
 #path_chatbot = r'data/datensatz_chatbot.csv' # Excel vorher als UTF-8 abspeichern
 path_stopwords = r"data/stopwords_chatbot.txt"
