@@ -39,7 +39,7 @@ def index():
       status=200,
       replies=[{
         'type': 'text',
-        'content': 'Der Sentiment %s ' % (sentiment)
+        'content': 'Der Sentiment %s ' % (chat_path)
       }]
     )
 
