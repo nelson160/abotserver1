@@ -29,19 +29,11 @@ print(port)
 def index():
   print(port)
   data = json.loads(request.get_data().decode('utf-8'))
+  txt = "das ist blöd"
 
   # FETCH THE CRYPTO NAME
   #chat_path = data['nlp']['source']
     
-    def load_json():
-        with open(chat_path) as json_file:
-            data = json.load(json_file)
-            for p in data['chat']:
-               # print('Time: ' + p['time'])
-               # print('Text: ' + p['text'])
-               # print('')
-                txt = p['text']            
-        return txt
     
     def preprocess_text(sen):
 
@@ -103,7 +95,7 @@ def index():
             'sentiment': sentiment
         }
 
-        with open('data/sentiment.json', 'w', encoding="utf-8") as json_file:
+        with open('sentiment.json', 'w', encoding="utf-8") as json_file:
             json.dump(json_output, json_file, ensure_ascii=False)
             
             
