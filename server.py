@@ -27,13 +27,12 @@ def index():
   # FETCH BTC/USD/EUR PRICES
   #r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
 
-    return jsonify(
-      status=200,
-      replies=[{
-        'type': 'text',
-        'content': 'Der Sentiment %s ' % (chat_path)
-      }]
-    )
+  return jsonify(
+    status=200,
+    replies=[{
+      'type': 'text',
+      'content': 'Der Sentiment %s ' % (chat_path)
+    }]   )
 
 @app.route('/errors', methods=['POST'])
 def errors():
