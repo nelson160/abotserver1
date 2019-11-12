@@ -15,6 +15,7 @@ app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
 print(port)
 
+@app.route('/', methods=['POST'])
 #chat_path = r"data/chat.json"
 model_path = 'paper_cnn_gru_drop02.h5'
 tokenizer_path =  "tokenizer.pickle"
@@ -23,8 +24,6 @@ path_stopwords = r"data/stopwords_chatbot.txt"
 
 maxlen = 27
 
-
-@app.route('/', methods=['POST'])
 def index():
   print(port)
   data = json.loads(request.get_data().decode('utf-8'))
