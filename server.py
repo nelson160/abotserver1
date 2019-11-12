@@ -123,7 +123,7 @@ print("Der Sentimentwert wurde in sentiment.json abgespeichert")
     status=200,
     replies=[{
       'type': 'text',
-      'content': 'Der Sentiment %s ' % (sentiment)
+      'content': 'Der Sentiment'
     }]   )
 
 @app.route('/errors', methods=['POST'])
