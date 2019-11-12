@@ -110,12 +110,12 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
   # FETCH BTC/USD/EUR PRICES
   #r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
 
-return jsonify(
-  status=200,
-  replies=[{
-    'type': 'text',
-    'content': 'Der Sentiment %s ' % (txt)
-  }]   )
+#return jsonify(
+#  status=200,
+#  replies=[{
+#    'type': 'text',
+#    'content': 'Der Sentiment %s ' % (txt)
+#  }]   )
 
 @app.route('/errors', methods=['POST'])
 def errors():
