@@ -10,14 +10,6 @@ import numpy as np
 import tensorflow as tf
 import pickle
 
-#chat_path = r"data/chat.json"
-model_path = 'paper_cnn_gru_drop02.h5'
-tokenizer_path =  "tokenizer.pickle"
-#path_chatbot = r'data/datensatz_chatbot.csv' # Excel vorher als UTF-8 abspeichern
-path_stopwords = r"data/stopwords_chatbot.txt"
-
-maxlen = 27
-
 app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
 print(port)
