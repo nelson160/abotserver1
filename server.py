@@ -2,13 +2,7 @@ from flask import Flask, request, jsonify
 import json
 import requests
 import os
-from keras.preprocessing.sequence import pad_sequences
-import re
-import string
-import pandas as pd
-import numpy as np
-import tensorflow as tf
-import pickle
+
 
 app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
