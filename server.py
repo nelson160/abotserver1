@@ -96,15 +96,15 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
     sentiment = labels[np.argmax(predi)]
     return sentiment
 
-def save_json(txt):
-    json_output = {
-        'model': model_path,
-        'text': txt,
-        'sentiment': sentiment
-    }
+#def save_json(txt):
+ #   json_output = {
+  #      'model': model_path,
+   #     'text': txt,
+    #    'sentiment': sentiment
+    #}
 
-    with open('data/sentiment.json', 'w', encoding="utf-8") as json_file:
-        json.dump(json_output, json_file, ensure_ascii=False)
+    #with open('sentiment.json', 'w', encoding="utf-8") as json_file:
+     #   json.dump(json_output, json_file, ensure_ascii=False)
         
         
 txt = load_json()
@@ -123,7 +123,7 @@ print("Der Sentimentwert wurde in sentiment.json abgespeichert")
     status=200,
     replies=[{
       'type': 'text',
-      'content': 'Der Sentiment'
+      'content': 'Der Sentiment %s ' % (txt)
     }]   )
 
 @app.route('/errors', methods=['POST'])
