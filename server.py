@@ -32,47 +32,15 @@ def index():
   txt = "das ist blöd"
 
   # FETCH THE CRYPTO NAME
-  #chat_path = data['nlp']['source']
+  #chat_path = data['nlp']['source']  
     
-    
-    def preprocess_text(sen):
+def load_models():
+    loaded_model = tf.keras.models.load_model(model_path)
 
-        sentence = sen
-        # Entfernt Punktuationen, behält Bindestriche ! 
-
-        remove = string.punctuation
-        remove = remove.replace("-", "") # keine Bindestriche entfernen
-        pattern = r"[{}]".format(remove) # Pattern erstellen 
-        sentence = re.sub(pattern, "", sentence) 
-
-        # Entfernt Zahlen
-        sentence = re.sub('[0-9]', '', sentence)
-
-        # Entfernt einzelne Buchstaben
-        sentence = re.sub(r"\s+[a-zA-Z]\s+", ' ', sentence)
-
-        # Entfernt mehrere Spaces
-        sentence = re.sub(r'\s+', ' ', sentence)
-
-        # Wandelt Großbuchstaben in Kleinbuchstaben um 
-        sentence = sentence.lower()
-
-        return sentence
-
-    def load_stopwords():
-        stopwordslist = open(path_stopwords, "r", encoding = "utf-8")
-        stop = stopwordslist.read()
-        stop = stop.split(', ')
-        #print(stop)
-        return stop 
-    
-    def load_models():
-        loaded_model = tf.keras.models.load_model(model_path)
-
-        with open(tokenizer_path, 'rb') as handle:
+    with open(tokenizer_path, 'rb') as handle:
             loaded_tokenizer = pickle.load(handle)
 
-        return loaded_model, loaded_tokenizer    
+    return loaded_model, loaded_tokenizer    
     
     
     def do_prediction(txt, loaded_model, loaded_tokenizer, stop): 
