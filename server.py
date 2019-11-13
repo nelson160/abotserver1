@@ -13,10 +13,10 @@ app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
 
 
-chat_path = r"data/chat.json"
+chat_path = r"chat.json"
 model_path = 'paper_cnn_gru_drop02.h5'
 tokenizer_path =  "tokenizer.pickle"
-path_stopwords = r"data/stopwords_chatbot.txt"
+path_stopwords = r"stopwords_chatbot.txt"
 
 maxlen = 27
 
