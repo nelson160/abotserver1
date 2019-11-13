@@ -6,11 +6,12 @@ import numpy as np
 import tensorflow as tf
 import pickle
 import json
-import os
+import os from pml
+import app
 
 
 app = Flask(__name__)
-port = int(os.environ.get('PORT', process.env.PORT))
+port = int(os.environ.get('PORT', 5000))
 #int(os.environ.get('PORT', 33507))
 
 
