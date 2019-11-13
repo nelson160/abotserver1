@@ -7,7 +7,6 @@ import tensorflow as tf
 import pickle
 import json
 import os 
-import app
 
 
 app = Flask(__name__)
