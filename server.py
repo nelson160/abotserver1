@@ -26,7 +26,7 @@ def index():
   # FETCH THE CRYPTO NAME
   crypto_name = data['nlp']['source']
   
-    if crypto_name == 'hallo':
+    if crypto_name = 'hallo':
         prediction = 'Erkannt'
 
 
