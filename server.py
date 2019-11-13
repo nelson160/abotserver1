@@ -26,20 +26,20 @@ def index():
   # FETCH THE CRYPTO NAME
   crypto_name = data['nlp']['source']
   
-    if crypto_name = 'hallo':
-        prediction = 'Erkannt'
+        if crypto_name = 'hallo':
+            prediction = 'Erkannt'
 
 
   # FETCH BTC/USD/EUR PRICES
   #r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
 
-  return jsonify(
-    status=200,
-    replies=[{
-      'type': 'text',
-      'content': 'Der Sentiment %s ' % (prediction)
-    }]
-  )
+      return jsonify(
+        status=200,
+        replies=[{
+          'type': 'text',
+          'content': 'Der Sentiment %s ' % (prediction)
+        }]
+      )
 
 @app.route('/errors', methods=['POST'])
 def errors():
