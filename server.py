@@ -11,10 +11,10 @@ import os
 
 
 app = Flask(__name__)
-port = int(os.environ.get('PORT', process.env.PORT))
+#port = int(os.environ.get('PORT', process.env.PORT))
 #int(os.environ.get('PORT', 33507))
 #port = process.env.PORT 
-
+port = System.get_env("PORT")
 
 chat_path = r"chat.json"
 model_path = 'paper_cnn_gru_drop02.h5'
