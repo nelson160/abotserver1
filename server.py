@@ -7,12 +7,6 @@ app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
 print(port)
 
-def init():
-    global model,graph
-    # load the pre-trained Keras model
-    model = load_model('paper_cnn_gru_drop02.h5')
-    graph = tf.get_default_graph()  
-
 @app.route('/', methods=['POST'])
 def index():
   print(port)
@@ -22,6 +16,7 @@ def index():
   crypto_name = data['nlp']['source']
   crypto_ticker = crypto_name.upper()
 
+  model = load_model('paper_cnn_gru_drop02.h5')
   predi = model.predict(crypto_ticker)
   labels = ['negativ', 'neutral', 'positiv']
   #print(predi, labels[np.argmax(predi)])
