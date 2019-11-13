@@ -10,7 +10,7 @@ import os
 
 
 app = Flask(__name__)
-port = process.env.PORT || 33507
+port = int(os.environ.get('PORT', process.env.PORT))
 #int(os.environ.get('PORT', 33507))
 
 
