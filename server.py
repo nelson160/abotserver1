@@ -27,8 +27,6 @@ maxlen = 27
     #        txt = p['text']
     #return txt
 
-
-
 def preprocess_text(sen):
     sentence = sen
     # Entfernt Punktuationen, behält Bindestriche !
@@ -100,19 +98,6 @@ print("Der Sentimentwert wurde in sentiment.json abgespeichert")
 print(txt)
 
 
-@app.route("/mask")
-def index():
-    return '''
-        <html>
-            <body>
-                <form action= "http://localhost:5000/predict" method = "post">
-                    <p>Text:</p>
-                    <p><input type = "text" name ="name" /></p>
-                    <p><input type = "submit" value ="Sentiment Analyse" /></p>
-                </form>
-            </body>
-        </html>
-    '''
 
 @app.route("/predict", methods=['POST', 'GET'] )
 def predict():
