@@ -85,7 +85,7 @@ def save_json(txt):
         'sentiment': sentiment
     }
 
-    with open('data/sentiment.json', 'w', encoding="utf-8") as json_file:
+    with open('sentiment.json', 'w', encoding="utf-8") as json_file:
         json.dump(json_output, json_file, ensure_ascii=False)
 
 
