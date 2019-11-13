@@ -95,7 +95,7 @@ txt = "Das ist schlecht!"#load_json()
 stop = load_stopwords()
 loaded_model, loaded_tokenizer = load_models()
 sentiment = do_prediction(txt, loaded_model, loaded_tokenizer, stop)
-save_json(txt)
+#save_json(txt)
 print("Der Sentimentwert wurde in sentiment.json abgespeichert")
 print(txt)
 
