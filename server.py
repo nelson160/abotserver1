@@ -7,12 +7,13 @@ app = Flask(__name__)
 port = int(os.environ.get('PORT', 33507))
 print(port)
 
+
 @app.route('/', methods=['POST'])
 def index():
   print(port)
   data = json.loads(request.get_data().decode('utf-8'))
 
-  # FETCH THE CRYPTO NAME
+  # FETCH THE CRYPTO NAME.
   crypto_name = data['nlp']['source']
   crypto_ticker = crypto_name.upper()
 
