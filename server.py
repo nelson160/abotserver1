@@ -11,10 +11,7 @@ def init():
     global model,graph
     # load the pre-trained Keras model
     model = load_model('paper_cnn_gru_drop02.h5')
-    graph = tf.get_default_graph()
-
-
-
+    graph = tf.get_default_graph()  
 
 @app.route('/', methods=['POST'])
 def index():
@@ -25,6 +22,12 @@ def index():
   crypto_name = data['nlp']['source']
   crypto_ticker = crypto_name.upper()
 
+  predi = model.predict(crypto_ticker)
+  labels = ['negativ', 'neutral', 'positiv']
+  #print(predi, labels[np.argmax(predi)])
+  sentiment = labels[np.argmax(predi)]
+
+
   # FETCH BTC/USD/EUR PRICES
   #r = requests.get("https://min-api.cryptocompare.com/data/price?fsym="+crypto_ticker+"&tsyms=BTC,USD,EUR")
 
@@ -32,7 +35,7 @@ def index():
     status=200,
     replies=[{
       'type': 'text',
-      'content': 'Der Sentiment %s ' % (crypto_ticker)
+      'content': 'Der Sentiment %s ' % (sentiment)
     }]
   )
 
