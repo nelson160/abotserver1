@@ -91,10 +91,10 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
 #        json.dump(json_output, json_file, ensure_ascii=False)
 
 
-txt = "Das ist schlecht!"#load_json()
-stop = load_stopwords()
-loaded_model, loaded_tokenizer = load_models()
-sentiment = do_prediction(txt, loaded_model, loaded_tokenizer, stop)
+#txt = "Das ist schlecht!"#load_json()
+#stop = load_stopwords()
+#loaded_model, loaded_tokenizer = load_models()
+#sentiment = do_prediction(txt, loaded_model, loaded_tokenizer, stop)
 #save_json(txt)
 #print("Der Sentimentwert wurde in sentiment.json abgespeichert")
 #print(txt)
