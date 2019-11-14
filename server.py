@@ -12,7 +12,7 @@ import os
 
 app = Flask(__name__)
 #port = int(os.environ.get('PORT', process.env.PORT))
-port = int(os.environ.get('PORT'))
+port = int(os.environ.get('PORT', 33507))
 #port = process.env.PORT 
 
 chat_path = r"chat.json"
