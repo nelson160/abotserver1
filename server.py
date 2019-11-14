@@ -80,15 +80,15 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
     return sentiment
 
 
-def save_json(txt):
-    json_output = {
-        'model': model_path,
-        'text': txt,
-        'sentiment': sentiment
-    }
+#def save_json(txt):
+#    json_output = {
+#        'model': model_path,
+#        'text': txt,
+#        'sentiment': sentiment
+#    }
 
-    with open('sentiment.json', 'w', encoding="utf-8") as json_file:
-        json.dump(json_output, json_file, ensure_ascii=False)
+#    with open('sentiment.json', 'w', encoding="utf-8") as json_file:
+#        json.dump(json_output, json_file, ensure_ascii=False)
 
 
 txt = "Das ist schlecht!"#load_json()
@@ -96,20 +96,9 @@ stop = load_stopwords()
 loaded_model, loaded_tokenizer = load_models()
 sentiment = do_prediction(txt, loaded_model, loaded_tokenizer, stop)
 #save_json(txt)
-print("Der Sentimentwert wurde in sentiment.json abgespeichert")
-print(txt)
+#print("Der Sentimentwert wurde in sentiment.json abgespeichert")
+#print(txt)
 
-
-
-@app.route("/predict", methods=['POST', 'GET'] )
-def predict():
-    name = ""
-    if request.method == 'POST':
-        name = request.form['name']
-    else:
-        name = request.args.get('name')
-
-    return name + txt + " Sentimentwert: " + sentiment
 
 
 @app.route('/', methods=['POST'])
