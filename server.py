@@ -98,7 +98,6 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
 #print(txt)
 
 
-
 @app.route('/', methods=['POST'])
 def bot():
     data = json.loads(request.get_data())
