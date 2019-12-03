@@ -6,12 +6,12 @@ import numpy as np
 import tensorflow as tf
 import pickle
 import json
-import os 
+
+
 
 app = Flask(__name__)
-#port = int(os.environ.get('PORT', process.env.PORT))
-port = int(os.environ.get('PORT', 33507))
-#port = process.env.PORT 
+port = '5000'
+
 
 chat_path = r"chat.json"
 model_path = 'paper_cnn_gru_drop02.h5'
@@ -20,12 +20,6 @@ path_stopwords = r"stopwords_chatbot.txt"
 
 maxlen = 27
 
-#def load_json():
- #   with open(chat_path) as json_file:
-  #      data = json.load(json_file)
-   #     for p in data['chat']:
-    #        txt = p['text']
-    #return txt
 
 def preprocess_text(sen):
     sentence = sen
@@ -78,24 +72,16 @@ def do_prediction(txt, loaded_model, loaded_tokenizer, stop):
     return sentiment
 
 
-#def save_json(txt):
-#    json_output = {
-#        'model': model_path,
-#        'text': txt,
-#        'sentiment': sentiment
-#    }
+def save_json(txt):
+    json_output = {
+        'model': model_path,
+        'text': txt,
+        'sentiment': sentiment
+    }
 
-#    with open('sentiment.json', 'w', encoding="utf-8") as json_file:
-#        json.dump(json_output, json_file, ensure_ascii=False)
+    with open('data/sentiment.json', 'w', encoding="utf-8") as json_file:
+        json.dump(json_output, json_file, ensure_ascii=False)
 
-
-#txt = "Das ist schlecht!"#load_json()
-#stop = load_stopwords()
-#loaded_model, loaded_tokenizer = load_models()
-#sentiment = do_prediction(txt, loaded_model, loaded_tokenizer, stop)
-#save_json(txt)
-#print("Der Sentimentwert wurde in sentiment.json abgespeichert")
-#print(txt)
 
 
 @app.route('/', methods=['POST'])
@@ -108,10 +94,8 @@ def bot():
     stop = load_stopwords()
     loaded_model, loaded_tokenizer = load_models()
     sentiment = do_prediction(bot_chat, loaded_model, loaded_tokenizer, stop)
-    output_Text = "Ich sehe Ihre Stimmung ist: " + sentiment
+    output_Text = sentiment
     print(bot_chat)
-
-    #r = json.loads()
 
     return jsonify(
         status=200,
@@ -125,4 +109,4 @@ app.run(port=port)
 
 
 if __name__ == '__main__':
-    app.run(port=port, host="0.0.0.0")
+    app.run(port=5000, debug=True)
