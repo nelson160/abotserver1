@@ -10,7 +10,7 @@ import json
 
 
 app = Flask(__name__)
-port = '5000'
+port = int(os.environ.get('PORT', 33507))
 
 
 chat_path = r"chat.json"
@@ -109,4 +109,4 @@ app.run(port=port)
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+	app.run(port=port, host="0.0.0.0")
