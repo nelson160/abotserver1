@@ -107,7 +107,7 @@ def bot():
         }]
     )
 
-app.run(port=port)
+
 
 
 if __name__ == '__main__':
